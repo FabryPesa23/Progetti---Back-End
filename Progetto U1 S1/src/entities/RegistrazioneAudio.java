@@ -3,16 +3,22 @@ import interfaces.Riproducibile;
 
 public class RegistrazioneAudio extends ElementoMultimediale implements Riproducibile {
     private int volume;
-    private int durata;
+    private final double durata;
 
-    public RegistrazioneAudio(String titolo, int durata) {
+    public RegistrazioneAudio(String titolo, double durata) {
         super(titolo);
         this.durata = durata;
         this.volume = 5;
     }
 
-    public void alzaVolume() { volume++; }
-    public void abbassaVolume() { if(volume > 0) volume--; }
+    public void alzaVolume() {
+        volume++;
+    }
+    public void abbassaVolume() {
+        if(volume > 0) {
+            volume--;
+        }
+    }
 
     @Override
     public void play() {
